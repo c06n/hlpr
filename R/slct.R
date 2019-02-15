@@ -15,7 +15,7 @@
 #' x <- data.frame(a = 1, b = 2, ab = 3)
 #' slct("a", names(x))
 #'
-slct <- function(pattern, names_dt, names = T) {
+slct <- function(pattern, names_df, names = T) {
 
   idx <- unlist(lapply(pattern, grep, names_df))
 
