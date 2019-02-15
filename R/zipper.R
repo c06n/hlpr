@@ -9,13 +9,17 @@
 #' @param vec If \code{TRUE}, a single vector is returned.
 #'
 #' @return Either a vector or a list of the zipped vector elements.
-#' @export
+#' @export zipper
 #'
 #' @examples
+#'
 #' x <- 1:5
 #' y <- 6:10
-#' zip(x, y, vec = TRUE)
-#' zip(x, y, fun = seq, vec = TRUE)
+#'
+#' zipper(x, y)
+#' zipper(x, y, vec = TRUE)
+#' zipper(x, y, fun = seq, vec = TRUE)
+#'
 zipper <- function(..., fun = c, vec = FALSE) {
 
   if (vec == FALSE) {

@@ -27,7 +27,7 @@ NULL
 #' @rdname as_datetime
 uxt <- function(time, origin = "1970-01-01", tz = "Europe/Berlin") {
 
-  lubridate::as_datetime(time, origin, tz)
+  as_datetime(time, origin, tz)
 
 }
 

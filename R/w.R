@@ -9,11 +9,15 @@
 #' @param overwrite Should existing files of the same name be overwritten?
 #' @param sep CSV separator
 #' @param dec decimal separator
-#' @export
-#' @examples
-#' df <- c(a = 1, b = 2)
-#' w(df)
+#'
 #' @importFrom data.table fwrite
+#' @export
+#'
+#' @examples
+#'
+#' df <- list(a = 1, b = 2)
+#' w(df)
+#'
 w <- function(x = NULL, fname = NULL, sep = ";", dec = ",", overwrite = FALSE) {
 
   if (is.null(x)) stop("Nothing to write.")

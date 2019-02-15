@@ -12,19 +12,19 @@
 #'
 #' @examples
 #'
-#' x <- sample(toupper(letters[1:5]), 100, replace = T)
-#' y <- trans_matrix(x, conv=T, cast.out="matrix", prob=T)
+#' x <- sample(toupper(letters[1:5]), 100, replace = TRUE)
+#' y <- trans_matrix(x, conv = TRUE, cast.out = "matrix", prob = TRUE)
 #'
 #' @import data.table data.table
 #' @export trans_matrix
-trans_matrix <- function(x, conv=FALSE, cast.out=FALSE, lag=1, prob=FALSE) {
+trans_matrix <- function(x, conv = FALSE, cast.out = FALSE, lag = 1, prob = FALSE) {
 
   if (length(x) == 1) stop("Need more than one data point.")
-  if (!is.numeric(x)) stop("argument must be numeric")
   if (conv) x <- matrix(x, nrow = 1)
   if (is.null(ncol(x))) stop("A data type which has at least one column is expected. Maybe set conv=T?", call. = FALSE)
 
-  tt <- table(x[,-c((ncol(x) - lag + 1):ncol(x))] , c(x[,-c(1:lag)]))
+  tt <- table(x[, -c((ncol(x) - lag + 1):ncol(x))],
+              c(x[,-c(1:lag)]))
   if (prob) tt <- tt / rowSums(tt)
 
   if (cast.out != FALSE) {

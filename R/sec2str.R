@@ -25,7 +25,7 @@ sec2str <- function(time, digits = 2) {
   # DON'T! TOUCH! A! FUCKING! THING!
   tmp1 <- round((time %% 3600) %% 60, digits)
   if (tmp1 %% 1 != 0) {
-    tmp2 <- stringr::str_match(tmp1, "(.*)\\.(.*)")
+    tmp2 <- str_match(tmp1, "(.*)\\.(.*)")
     ss <- tmp2[2]
     ms <- tmp2[3]
   } else {
@@ -34,12 +34,12 @@ sec2str <- function(time, digits = 2) {
   }
 
   out <- paste(
-    stringr::str_pad(hh, 2, "left", 0),
-    stringr::str_pad(mm, 2, "left", 0),
-    stringr::str_pad(ss, 2, "left", 0),
+    str_pad(hh, 2, "left", 0),
+    str_pad(mm, 2, "left", 0),
+    str_pad(ss, 2, "left", 0),
     sep = ":"
   )
-  out <- paste0(out, ".", stringr::str_pad(ms, digits, "right", 0))
+  out <- paste0(out, ".", str_pad(ms, digits, "right", 0))
 
   out
 
