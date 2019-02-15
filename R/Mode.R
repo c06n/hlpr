@@ -6,7 +6,7 @@
 #'
 #' @return a scalar value
 #'
-#' @export: Mode
+#' @export Mode
 #'
 #' @examples
 #'
