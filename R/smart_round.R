@@ -16,7 +16,12 @@
 #'   \item{\href{https://stackoverflow.com/questions/32544646/round-vector-of-numerics-to-integer-while-preserving-their-sum}{R-implementation}}
 #'   }
 #'
+#' @importFrom utils tail
+#'
+#' @export smart_round
+#'
 #' @return same as input
+#'
 #' @examples
 #'
 #' set.seed(42)
@@ -24,9 +29,6 @@
 #' y <- smart_round(x, 3)
 #' round(sum(x), 3) == sum(y)
 #'
-#' @importFrom utils tail
-#' @rdname smart_round
-#' @export smart_round
 smart_round <- function(x, digits = 0) {
 
   up <- 10 ^ digits

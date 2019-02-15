@@ -1,4 +1,4 @@
-#' Normalize a vector between upper and lower bound.
+#' Normalize a vector between upper and lower bound
 #'
 #' Given a vector, this function linearly transforms the vector's values between
 #' an upper and a lower bound.
@@ -11,16 +11,20 @@
 #'
 #' @return A vector
 #'
-#' @export
+#' @export norml
+#'
 #' @examples
+#'
 #' x <- rnorm(10)
 #' norml(x)
 #' norml(x, -8, 50)
+#'
 norml <- function(x, lower = 0, upper = 1) {
 
   if (!is.numeric(x)) stop("argument must be numeric")
 
-  out <- (upper - lower) * ((x - min(x, na.rm = TRUE)) / (max(x, na.rm = TRUE) - min(x, na.rm = TRUE))) + lower
-  out
+  (upper - lower) *
+    ((x - min(x, na.rm = TRUE)) /
+       (max(x, na.rm = TRUE) - min(x, na.rm = TRUE))) + lower
 
 }

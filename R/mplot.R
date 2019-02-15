@@ -1,18 +1,23 @@
 #' Multiplot
 #'
 #' Arranges plots into a layout. If the layout is something like \code{matrix(c(1,2,3,3),
-#' nrow=2, byrow=TRUE)}, then plot 1 will go in the upper left, 2 will go in the
+#' nrow = 2, byrow = TRUE)}, then plot 1 will go in the upper left, 2 will go in the
 #' upper right, and 3 will go all the way across the bottom.
 #'
 #' @param plotlist A list of \code{ggplot}-objects
 #' @param cols Number of columns in layout
 #' @param layout Number of columns in layout
+#' @param ... \code{ggplot}-objects
 #'
 #' @details Credits go to \href{http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/}{Cookbook for R}
 #'
-#' @param ... \code{ggplot}-objects
-#' @export
+#' @import ggplot2
+#' @import grid
+#'
+#' @export mplot
+#'
 #' @examples
+#'
 #' library(ggplot2)
 #'
 #' # This example uses the ChickWeight dataset, which comes with ggplot2
@@ -29,8 +34,6 @@
 #'
 #' mplot(p1, p2, cols=2)
 #'
-#' @import ggplot2
-#' @import grid
 mplot <- function(..., plotlist = NULL, cols = 1, layout = NULL) {
 
   # Make a list from the ... arguments and plotlist

@@ -10,13 +10,15 @@
 #'
 #' @return a table object, or what in \code{cast.out} was defined
 #'
+#' @import data.table data.table
+#'
+#' @export trans_matrix
+#'
 #' @examples
 #'
 #' x <- sample(toupper(letters[1:5]), 100, replace = TRUE)
 #' y <- trans_matrix(x, conv = TRUE, cast.out = "matrix", prob = TRUE)
 #'
-#' @import data.table data.table
-#' @export trans_matrix
 trans_matrix <- function(x, conv = FALSE, cast.out = FALSE, lag = 1, prob = FALSE) {
 
   if (length(x) == 1) stop("Need more than one data point.")

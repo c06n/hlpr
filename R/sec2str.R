@@ -6,16 +6,18 @@
 #'
 #' @param time A numerical value.
 #' @param digits Number of decimal digits of the string.
+#'
 #' @return A string corresponding to x.
+#'
+#' @importFrom stringr str_match
+#' @importFrom stringr str_pad
+#'
 #' @export sec2str
-#' @rdname sec2str
 #'
 #' @examples
 #'
 #' sec2str(3612.5)
 #'
-#' @importFrom stringr str_match
-#' @importFrom stringr str_pad
 sec2str <- function(time, digits = 2) {
 
   if (!is.numeric(time)) stop("Numerical value expected")
@@ -24,6 +26,7 @@ sec2str <- function(time, digits = 2) {
   mm <- (time %% 3600) %/% 60 # avoids the '60'-problem
   # DON'T! TOUCH! A! FUCKING! THING!
   tmp1 <- round((time %% 3600) %% 60, digits)
+
   if (tmp1 %% 1 != 0) {
     tmp2 <- str_match(tmp1, "(.*)\\.(.*)")
     ss <- tmp2[2]
@@ -39,6 +42,7 @@ sec2str <- function(time, digits = 2) {
     str_pad(ss, 2, "left", 0),
     sep = ":"
   )
+
   out <- paste0(out, ".", str_pad(ms, digits, "right", 0))
 
   out

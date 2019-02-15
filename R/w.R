@@ -11,7 +11,8 @@
 #' @param dec decimal separator
 #'
 #' @importFrom data.table fwrite
-#' @export
+#'
+#' @export w
 #'
 #' @examples
 #'

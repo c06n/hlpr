@@ -3,8 +3,11 @@
 #' Transform angles from \code{radian} to \code{degree}, and from \code{degree} to \code{radian}.
 #'
 #' @param x An angle
+#'
 #' @return The transformed angle
+#'
 #' @examples
+#'
 #' # Radian to degree
 #' r2d(2 * pi)
 #'
@@ -13,6 +16,7 @@
 #'
 #' @name angles
 NULL
+
 #' @rdname angles
 #' @export
 r2d <- function(x) {
