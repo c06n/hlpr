@@ -3,7 +3,7 @@
 #' Find column indices or names by matching them against a regular expression.
 #'
 #' @param pattern \code{regex}-pattern to match the column names.
-#' @param names_dt Names of the data.frame to be matched.
+#' @param names_df Names of the data.frame to be matched.
 #' @param names Should the actual names be returned?
 #'
 #' @return Either the index of the matched column names, or their index.

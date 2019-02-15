@@ -16,12 +16,13 @@
 #'
 #' @return a vector of Date objects corresponding to x.
 #'
+#' @importFrom lubridate as_datetime
+#'
 #' @examples
 #'
 #' # convert unixtime to a date object
 #' uxt(1550242175.5)
 #'
-#' @importFrom lubridate as_datetime
 #' @name as_datetime
 NULL
 

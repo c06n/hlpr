@@ -8,7 +8,7 @@
 #' @param lag Looks at the nth previous element in the markov chain vector.
 #' @param prob If set \code{TRUE}, returns relative frequencies, otherwise they are absolute.
 #'
-#' @return a table object, or what in \code{cast.out} was defined
+#' @return A table object, or what in \code{cast.out} was defined.
 #'
 #' @import data.table data.table
 #'
