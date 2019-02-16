@@ -1,11 +1,11 @@
-Package: hlp
+Package: hlpr
 Type: Package
 Title: Utility functions for data wrangling
 Version: 0.2
 Author: David Käthner
 Maintainer: David Käthner<david.kaethner@dlr.de>
-Description: A collection of custom functions I found useful.
-Depends: R (>= 3.5)
+Description: A collection of custom functions and wrappers.
+Depends: R (>= 3.0)
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
